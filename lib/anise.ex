@@ -1,6 +1,6 @@
 defmodule Anise do
   @moduledoc """
-   Anis is a set of helpers/aseertions for Absinthe
+   Anis is a set of helpers/assertions for Absinthe
   """
 
   @doc """
