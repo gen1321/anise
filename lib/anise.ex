@@ -1,18 +1,14 @@
 defmodule Anise do
-  @moduledoc """
-  Documentation for Anise.
-  """
+  defmacro __using__(_opts) do
+    import Phoenix.ConnTest
+    quote do
+      def graphql(conn, endpoint, query) do
+        post(conn ,endpoint, %{query: query})
+      end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Anise.hello()
-      :world
-
-  """
-  def hello do
-    :world
+      def graphql(conn, endpoint, query, variables) do
+        post(conn, endpoint, %{query: query, variables: variables})
+      end
+    end
   end
 end

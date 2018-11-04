@@ -2,12 +2,6 @@ defmodule AbsintheTestAppWeb.Schema do
   use Absinthe.Schema
 
   alias AbsintheTestApp.User
-  alias AbsintheTestAppWeb.Middleware.MapFetch
-
-  def middleware(middlewares, field, object) do
-    middlewares ++ [MapFetch]
-  end
-
   object :user do
     field :email, non_null(:string)
     field :name, non_null(:string)

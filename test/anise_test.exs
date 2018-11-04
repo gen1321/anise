@@ -1,8 +1,11 @@
 defmodule AniseTest do
   use ExUnit.Case
-  doctest Anise
+  use Anise.SubscriptionCase, schema: IO, socket: IO
+  @endpoint IO
 
-  test "greets the world" do
-    assert Anise.hello() == :world
+  describe "t" do
+    test "1" do
+      1 + 2
+    end
   end
 end
