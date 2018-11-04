@@ -1,6 +1,6 @@
 defmodule Anise do
   defmacro __using__(_opts) do
-    import Phoenix.ConnTest
+    import Phoenix.ConnTest, only: [post: 3]
 
     quote do
       def graphql(conn, endpoint, query) do
