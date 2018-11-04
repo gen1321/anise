@@ -56,6 +56,7 @@ Now you can test your subscritpions.
       assert_subscription_fulfilment fufilment
       assert fufilment = expected
     end
+  end
 ```
 
 
