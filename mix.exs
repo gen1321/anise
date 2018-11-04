@@ -57,7 +57,7 @@ defmodule Anise.MixProject do
   defp docs do
     [
       source_ref: "v#{@version}",
-      main: "SimpleGraphqlClient",
+      main: "Anise",
       extras: ["README.md"]
     ]
   end
