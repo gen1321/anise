@@ -1,11 +1,13 @@
 defmodule Anise.MixProject do
   use Mix.Project
+  @version "0.1.0"
+  @github_url "https://github.com/gen1321/simple_graphql_client"
 
   def project do
     [
       app: :anise,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.4",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -21,6 +23,9 @@ defmodule Anise.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:absinthe_phoenix, "~> 1.4.0"}
     ]
   end
@@ -33,10 +38,15 @@ defmodule Anise.MixProject do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["Boris Beginin"],
-      licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/gen1321/anise"}
+      files: [
+        "lib",
+        "mix.exs",
+        "README.md",
+        "LICENSE"
+      ],
+      links: %{"github" => @github_url},
+      maintainers: ["Boris Beginin <gen3212@gmail.com>"],
+      licenses: ["MIT"]
     ]
   end
 end

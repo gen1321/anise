@@ -1,4 +1,15 @@
 defmodule Anise do
+  @moduledoc """
+   Anis is a set of helpers/aseertions for Absinthe
+  """
+
+  @doc """
+    Creates `graphql` funtcions that performs request.
+
+  ```elixir
+    graphql(conn, "/api", @mutation, %{email: "test@example.com", name: "Boris"})
+  ```
+  """
   defmacro __using__(_opts) do
     import Phoenix.ConnTest, only: [post: 3]
 

@@ -24,9 +24,9 @@ defmodule AbsintheTestApp.SubscriptionTest do
 
       graphql(conn, "/api", @mutation, %{email: "test@example.com", name: "Boris"})
 
-      assert subscription_fulfilment = %{
-               result: %{data: %{"userAdded" => %{"name" => "Boris"}}}
-             }
+      expected = %{result: %{data: %{"userAdded" => %{"name" => "Boris"}}}}
+      assert_subscription_fulfilment fufilment
+      assert fufilment = expected
     end
 
     test "sub without fufilment", %{socket: socket, conn: conn} do

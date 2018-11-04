@@ -8,9 +8,8 @@ defmodule AbsintheTestAppWeb.SubscriptionCase do
 
       use Anise.SubscriptionCase,
         schema: AbsintheTestAppWeb.Schema,
-        socket: AbsintheTestAppWeb.UserSocket,
-        endpoint: AbsintheTestAppWeb.Endpoint
-    end
+        socket: AbsintheTestAppWeb.UserSocket
+      end
   end
 
   setup do
