@@ -1,3 +1,3 @@
 defmodule AbsintheTestApp.User do
-  defstruct email: :nil, name: nil
+  defstruct email: nil, name: nil
 end

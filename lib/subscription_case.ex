@@ -6,8 +6,6 @@ defmodule Anise.SubscriptionCase do
     quote do
       use Phoenix.ChannelTest
       use Phoenix.ConnTest
-      #set @endpoint
-      Module.put_attribute(__MODULE__, :endpoint, Keyword.get(unquote(opts), :endpoint))
 
       # validates schema and import base absinthe testings functions
       use Absinthe.Phoenix.SubscriptionTest,
@@ -20,25 +18,26 @@ defmodule Anise.SubscriptionCase do
             Keyword.get(unquote(opts), :socket),
             Keyword.get(unquote(opts), :socket_params) || %{}
           )
+
         # Join socket
         {:ok, socket} = Absinthe.Phoenix.SubscriptionTest.join_absinthe(socket)
         {:ok, socket: socket, conn: Phoenix.ConnTest.build_conn()}
       end
 
       def subscribe(socket, subscription_query) do
-        ref = SubscriptionTest.push_doc socket, subscription_query
+        ref = SubscriptionTest.push_doc(socket, subscription_query)
         Phoenix.ChannelTest.assert_reply(ref, :ok, _)
       end
 
       defmacro assert_subscription_fulfilment(expected) do
         quote do
-          assert_push "subscription:data", unquote(expected) 
+          assert_push("subscription:data", unquote(expected))
         end
       end
 
       defmacro refute_subscription_fulfilment(expected) do
         quote do
-          refute_push "subscription:data", unquote(expected) 
+          refute_push("subscription:data", unquote(expected))
         end
       end
     end

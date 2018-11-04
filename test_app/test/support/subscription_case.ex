@@ -5,10 +5,11 @@ defmodule AbsintheTestAppWeb.SubscriptionCase do
     quote do
       @endpoint AbsintheTestAppWeb.Endpoint
       use Anise
+
       use Anise.SubscriptionCase,
         schema: AbsintheTestAppWeb.Schema,
         socket: AbsintheTestAppWeb.UserSocket,
-        endpoint:  AbsintheTestAppWeb.Endpoint
+        endpoint: AbsintheTestAppWeb.Endpoint
     end
   end
 
