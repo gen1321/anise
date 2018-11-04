@@ -9,7 +9,7 @@ Anise is a set of helpers/assertions for Absinthe
 ```elixir
 def deps do
   [
-    {:anise, "~> 0.1.0"}
+    {:anise, "~> 0.1.1"}
   ]
 end
 ```
