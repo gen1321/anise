@@ -1,6 +1,6 @@
 # Anise
 
-Anis is a set of helpers/assertions for Absinthe
+Anise is a set of helpers/assertions for Absinthe
 
 
 
