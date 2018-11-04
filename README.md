@@ -2,6 +2,18 @@
 
 Anis is a set of helpers/assertions for Absinthe
 
+
+
+## Installation
+
+```elixir
+def deps do
+  [
+    {:anise, "~> 0.1.0"}
+  ]
+end
+```
+
 ## Usage
 
 ### Without subscriptions
@@ -57,15 +69,4 @@ Now you can test your subscritpions.
       assert fufilment = expected
     end
   end
-```
-
-
-## Installation
-
-```elixir
-def deps do
-  [
-    {:anise, "~> 0.1.0"}
-  ]
-end
 ```
