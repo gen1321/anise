@@ -1,7 +1,7 @@
 defmodule Anise.MixProject do
   use Mix.Project
   @version "0.1.0"
-  @github_url "https://github.com/gen1321/simple_graphql_client"
+  @github_url "https://github.com/gen1321/anise"
 
   def project do
     [
@@ -9,7 +9,12 @@ defmodule Anise.MixProject do
       version: "0.1.0",
       elixir: "~> 1.4",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      version: @version,
+      description: "Helpers/Assertions for Absinthe",
+      docs: docs(),
+      package: package(),
+      source_url: @github_url
     ]
   end
 
@@ -47,6 +52,13 @@ defmodule Anise.MixProject do
       links: %{"github" => @github_url},
       maintainers: ["Boris Beginin <gen3212@gmail.com>"],
       licenses: ["MIT"]
+    ]
+  end
+  defp docs do
+    [
+      source_ref: "v#{@version}",
+      main: "SimpleGraphqlClient",
+      extras: ["README.md"]
     ]
   end
 end
