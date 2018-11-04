@@ -52,7 +52,7 @@ end
 ```
 Then in your subscription tests add `use MyAppWeb.Subscription`
 
-Now you can test your subscritpions.
+Now you can test your subscriptions.
 
 ```elixir
   describe "User add" do
