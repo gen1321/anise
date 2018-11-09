@@ -35,21 +35,31 @@ defmodule Anise do
       ```elixir
         # basic query to request Star Wars heroes
         iex> build_query(:query, "allHeroes", [], ~w(id name))
-        # query {
-        #   allHeroes {
-        #     id
-        #     name
-        #   }
-        # }
+        query allHeroes {
+          allHeroes {
+            id
+            name
+          }
+        }
 
         # Query specific hero
-        iex> build_query(:query, "hero", [{id: "ID!"}], ~w(id name))
-        # query ($id: "ID!") {
-        #   allHeroes(id: $id) {
-        #     id
-        #     name
-        #   }
-        # }
+        iex> build_query(:query, "hero", [{:id, "ID!"}], ~w(id name))
+        query allHeroes($id: "ID!") {
+          allHeroes(id: $id) {
+            id
+            name
+          }
+        }
+
+        # mutate hero
+        iex> update_hero_query = build_query(:query, "updateHero", [{:id, "ID!"}, {:name, "String"}], ~w(id name))
+        mutation updateHero($id: "ID!", $name: "String") {
+          updateHero(id: $id, name: $name) {
+            id
+            name
+          }
+        }
+        # You can then call graphql(conn, @endpoint, update_hero_query, %{id: 1, name: "Luke Vador"})
       ```
       """
       def build_query(operation_type, operation_name, args, keys) do
