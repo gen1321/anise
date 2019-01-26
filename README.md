@@ -19,7 +19,7 @@ end
 ### Without subscriptions
 Add `use Anise` on top of your tests. 
 
-Than you can use do that.
+Than you can do that.
 
 ```elixir
 graphql(conn, "/api", @mutation, %{email: "test@example.com", name: "Boris"})
